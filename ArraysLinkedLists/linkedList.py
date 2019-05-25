@@ -47,14 +47,15 @@ class LinkedList:
                         return
                     currentNode = currentNode.next
             
-        return
+        return None
     
     def pop(self):
         """ Return the first node's value and remove it from the list. """
-        firstNode = None
-        if self.head:
-            firstNode = self.head
-            self.head = self.head.next
+        if self.head is None:
+            return None
+        
+        firstNode = self.head
+        self.head = self.head.next
         return firstNode.value
     
     def insert(self, value, pos):
